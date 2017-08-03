@@ -15,7 +15,9 @@ class CreateGeneralsTable extends Migration
     {
         Schema::create('generals', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->text('Term');
+            $table->text('Body');
         });
     }
 
