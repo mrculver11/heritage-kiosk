@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 
 class GeneralsController extends Controller
 {
-    public function welcome()
-    {
-    	return view('welcome');
-    }
     public function landing()
     {
     	return view('landing');
@@ -26,10 +22,15 @@ class GeneralsController extends Controller
     }
     public function moh()
     {
-        return view('medalofhonor');
+         $mohs = \DB::table('mohs')->get();
+        return view('medalofhonor', compact('mohs'));
     }
     public function song()
     {
         return view('song');
+    }
+    public function insignia()
+    {
+        return view('insignia');
     }
 }
